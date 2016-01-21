@@ -7,14 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6D7BFC353F95171BA6BA0CD /* Pods_show_your_app_glympe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1D314CC3E16D2760514D7F /* Pods_show_your_app_glympe.framework */; };
 		F98FB3771C4FCFBF004653F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98FB3761C4FCFBF004653F8 /* AppDelegate.swift */; };
 		F98FB3791C4FCFBF004653F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98FB3781C4FCFBF004653F8 /* ViewController.swift */; };
 		F98FB37C1C4FCFBF004653F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F98FB37A1C4FCFBF004653F8 /* Main.storyboard */; };
 		F98FB37E1C4FCFBF004653F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98FB37D1C4FCFBF004653F8 /* Assets.xcassets */; };
 		F98FB3811C4FCFBF004653F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F98FB37F1C4FCFBF004653F8 /* LaunchScreen.storyboard */; };
+		F98FB3901C4FD303004653F8 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F98FB38C1C4FD303004653F8 /* NotoSans-Bold.ttf */; };
+		F98FB3911C4FD303004653F8 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F98FB38D1C4FD303004653F8 /* NotoSans-BoldItalic.ttf */; };
+		F98FB3921C4FD303004653F8 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F98FB38E1C4FD303004653F8 /* NotoSans-Italic.ttf */; };
+		F98FB3931C4FD303004653F8 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F98FB38F1C4FD303004653F8 /* NotoSans-Regular.ttf */; };
+		F98FB3951C4FD7FB004653F8 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98FB3941C4FD7FB004653F8 /* MaterialView.swift */; };
+		F98FB3981C4FD865004653F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98FB3971C4FD865004653F8 /* Constants.swift */; };
+		F98FB39A1C4FDCE4004653F8 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98FB3991C4FDCE4004653F8 /* MaterialButton.swift */; };
+		F98FB39C1C4FDE01004653F8 /* MaterialImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98FB39B1C4FDE01004653F8 /* MaterialImage.swift */; };
+		F98FB3A11C4FE12D004653F8 /* MaterialTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98FB3A01C4FE12D004653F8 /* MaterialTextfield.swift */; };
+		F98FB3A91C50398F004653F8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98FB3A61C50398E004653F8 /* Bolts.framework */; };
+		F98FB3AA1C50398F004653F8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98FB3A71C50398E004653F8 /* FBSDKCoreKit.framework */; };
+		F98FB3AB1C50398F004653F8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98FB3A81C50398F004653F8 /* FBSDKLoginKit.framework */; };
+		F997D1691C510E73004ABA3E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997D1681C510E73004ABA3E /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		503D8DA79334957136930F85 /* Pods-show-your-app-glympe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-show-your-app-glympe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-show-your-app-glympe/Pods-show-your-app-glympe.debug.xcconfig"; sourceTree = "<group>"; };
+		CE1D314CC3E16D2760514D7F /* Pods_show_your_app_glympe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_show_your_app_glympe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D18793D9A856692EBAEBBA54 /* Pods-show-your-app-glympe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-show-your-app-glympe.release.xcconfig"; path = "Pods/Target Support Files/Pods-show-your-app-glympe/Pods-show-your-app-glympe.release.xcconfig"; sourceTree = "<group>"; };
 		F98FB3731C4FCFBF004653F8 /* show-your-app-glympe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "show-your-app-glympe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98FB3761C4FCFBF004653F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98FB3781C4FCFBF004653F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +39,19 @@
 		F98FB37D1C4FCFBF004653F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F98FB3801C4FCFBF004653F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F98FB3821C4FCFBF004653F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F98FB38C1C4FD303004653F8 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		F98FB38D1C4FD303004653F8 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F98FB38E1C4FD303004653F8 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		F98FB38F1C4FD303004653F8 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		F98FB3941C4FD7FB004653F8 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		F98FB3971C4FD865004653F8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F98FB3991C4FDCE4004653F8 /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		F98FB39B1C4FDE01004653F8 /* MaterialImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialImage.swift; sourceTree = "<group>"; };
+		F98FB3A01C4FE12D004653F8 /* MaterialTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextfield.swift; sourceTree = "<group>"; };
+		F98FB3A61C50398E004653F8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		F98FB3A71C50398E004653F8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F98FB3A81C50398F004653F8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F997D1681C510E73004ABA3E /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +59,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98FB3A91C50398F004653F8 /* Bolts.framework in Frameworks */,
+				F98FB3AA1C50398F004653F8 /* FBSDKCoreKit.framework in Frameworks */,
+				F98FB3AB1C50398F004653F8 /* FBSDKLoginKit.framework in Frameworks */,
+				F6D7BFC353F95171BA6BA0CD /* Pods_show_your_app_glympe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F195E882930F45686A5E575 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE1D314CC3E16D2760514D7F /* Pods_show_your_app_glympe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF6EAED033FF3F9DDB0AAF80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				503D8DA79334957136930F85 /* Pods-show-your-app-glympe.debug.xcconfig */,
+				D18793D9A856692EBAEBBA54 /* Pods-show-your-app-glympe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F98FB36A1C4FCFBF004653F8 = {
 			isa = PBXGroup;
 			children = (
 				F98FB3751C4FCFBF004653F8 /* show-your-app-glympe */,
 				F98FB3741C4FCFBF004653F8 /* Products */,
+				EF6EAED033FF3F9DDB0AAF80 /* Pods */,
+				0F195E882930F45686A5E575 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +107,13 @@
 		F98FB3751C4FCFBF004653F8 /* show-your-app-glympe */ = {
 			isa = PBXGroup;
 			children = (
+				F997D1671C510E5E004ABA3E /* Services */,
+				F98FB3A51C503970004653F8 /* Framework */,
+				F98FB3961C4FD859004653F8 /* Utilities */,
+				F98FB38B1C4FD2B1004653F8 /* Resources */,
+				F98FB38A1C4FD2AC004653F8 /* Model */,
+				F98FB3891C4FD2A7004653F8 /* View */,
+				F98FB3881C4FD2A0004653F8 /* Controller */,
 				F98FB3761C4FCFBF004653F8 /* AppDelegate.swift */,
 				F98FB3781C4FCFBF004653F8 /* ViewController.swift */,
 				F98FB37A1C4FCFBF004653F8 /* Main.storyboard */,
@@ -64,6 +124,68 @@
 			path = "show-your-app-glympe";
 			sourceTree = "<group>";
 		};
+		F98FB3881C4FD2A0004653F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F98FB3891C4FD2A7004653F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F98FB3941C4FD7FB004653F8 /* MaterialView.swift */,
+				F98FB3991C4FDCE4004653F8 /* MaterialButton.swift */,
+				F98FB39B1C4FDE01004653F8 /* MaterialImage.swift */,
+				F98FB3A01C4FE12D004653F8 /* MaterialTextfield.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F98FB38A1C4FD2AC004653F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F98FB38B1C4FD2B1004653F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F98FB38C1C4FD303004653F8 /* NotoSans-Bold.ttf */,
+				F98FB38D1C4FD303004653F8 /* NotoSans-BoldItalic.ttf */,
+				F98FB38E1C4FD303004653F8 /* NotoSans-Italic.ttf */,
+				F98FB38F1C4FD303004653F8 /* NotoSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F98FB3961C4FD859004653F8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F98FB3971C4FD865004653F8 /* Constants.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		F98FB3A51C503970004653F8 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				F98FB3A61C50398E004653F8 /* Bolts.framework */,
+				F98FB3A71C50398E004653F8 /* FBSDKCoreKit.framework */,
+				F98FB3A81C50398F004653F8 /* FBSDKLoginKit.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		F997D1671C510E5E004ABA3E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F997D1681C510E73004ABA3E /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F98FB3851C4FCFBF004653F8 /* Build configuration list for PBXNativeTarget "show-your-app-glympe" */;
 			buildPhases = (
+				19D60C17F302BAE1F3FB854A /* Check Pods Manifest.lock */,
 				F98FB36F1C4FCFBF004653F8 /* Sources */,
 				F98FB3701C4FCFBF004653F8 /* Frameworks */,
 				F98FB3711C4FCFBF004653F8 /* Resources */,
+				BD14C8D98A74A36FA05677F8 /* Embed Pods Frameworks */,
+				26005579F2ABB03CD490924B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,21 +247,79 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98FB3901C4FD303004653F8 /* NotoSans-Bold.ttf in Resources */,
 				F98FB3811C4FCFBF004653F8 /* LaunchScreen.storyboard in Resources */,
+				F98FB3911C4FD303004653F8 /* NotoSans-BoldItalic.ttf in Resources */,
+				F98FB3921C4FD303004653F8 /* NotoSans-Italic.ttf in Resources */,
 				F98FB37E1C4FCFBF004653F8 /* Assets.xcassets in Resources */,
 				F98FB37C1C4FCFBF004653F8 /* Main.storyboard in Resources */,
+				F98FB3931C4FD303004653F8 /* NotoSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19D60C17F302BAE1F3FB854A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		26005579F2ABB03CD490924B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-show-your-app-glympe/Pods-show-your-app-glympe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD14C8D98A74A36FA05677F8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-show-your-app-glympe/Pods-show-your-app-glympe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F98FB36F1C4FCFBF004653F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98FB39C1C4FDE01004653F8 /* MaterialImage.swift in Sources */,
+				F98FB3951C4FD7FB004653F8 /* MaterialView.swift in Sources */,
 				F98FB3791C4FCFBF004653F8 /* ViewController.swift in Sources */,
 				F98FB3771C4FCFBF004653F8 /* AppDelegate.swift in Sources */,
+				F98FB3A11C4FE12D004653F8 /* MaterialTextfield.swift in Sources */,
+				F98FB3981C4FD865004653F8 /* Constants.swift in Sources */,
+				F98FB39A1C4FDCE4004653F8 /* MaterialButton.swift in Sources */,
+				F997D1691C510E73004ABA3E /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,8 +430,13 @@
 		};
 		F98FB3861C4FCFBF004653F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 503D8DA79334957136930F85 /* Pods-show-your-app-glympe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/show-your-app-glympe",
+				);
 				INFOPLIST_FILE = "show-your-app-glympe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.glympe.show-your-app-glympe";
@@ -258,8 +446,13 @@
 		};
 		F98FB3871C4FCFBF004653F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D18793D9A856692EBAEBBA54 /* Pods-show-your-app-glympe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/show-your-app-glympe",
+				);
 				INFOPLIST_FILE = "show-your-app-glympe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.glympe.show-your-app-glympe";
@@ -286,6 +479,7 @@
 				F98FB3871C4FCFBF004653F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
