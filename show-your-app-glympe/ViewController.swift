@@ -12,6 +12,9 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var emailField: MaterialTextfield!
+    @IBOutlet weak var passwordField: MaterialTextfield!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,14 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil){
+            self.performSegueWithIdentifier(SEGUE_LOG_IN, sender: nil)
+        }
     }
     
     @IBAction func fbBtnPressed(sender: AnyObject) {
@@ -41,13 +52,57 @@ class ViewController: UIViewController {
                     }else{
                         print("Loggged in \(authData)")
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
+                        self.userLogin()
                     }
                 })
             }
         }
     }
     
+    @IBAction func loginBtnPressed(sender: AnyObject) {
+        if let email = emailField.text where emailField.text != "", let password = passwordField.text where passwordField.text != "" {
+            DataService.ds.REF_BASE.authUser(email, password: password, withCompletionBlock: { error, authData in
+                if error != nil {
+                    print(error)
+                    if error.code == STATUS_ACCOUNT_NONEXIST{
+                        //if account does not exist, create new user
+                        DataService.ds.REF_BASE.createUser(email, password: password, withValueCompletionBlock: { error, result in
+                            //Check error codes
+                            if error != nil {
+                                //Check if account already exists, or problem with password (not enough chars) - TODO!!!!
+                                self.showAlert("Cannot Create Account", msg: "Please try different username and/or password")
+                            }else{
+                                //If all ok - save user id and login (result[KEY_UID] instead of result.uid because it is a dictionary
+                                NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
+                                //We dont check for errors as we just created a new user account (could add check if needed though
+                                DataService.ds.REF_BASE.authUser(email, password: password, withCompletionBlock: nil)
+                                self.userLogin()
+                            }
+                        })
+                    } else {
+                        self.showAlert("Could not Login", msg: "Please check username or password")
+                    }
+                }else {
+                    //If first email and password are valid and user has an account
+                    self.userLogin()
+                }
+            })
+        }else {
+            showAlert("Invalid Login In", msg: "Please enter a valid email and password")
+        }
+        
+    }
     
+    func showAlert(title: String, msg: String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func userLogin(){
+        performSegueWithIdentifier(SEGUE_LOG_IN, sender: nil)
+    }
 
 
 }
