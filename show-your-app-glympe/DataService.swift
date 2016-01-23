@@ -9,14 +9,29 @@
 import Foundation
 import Firebase
 
+let URL_BASE = "https://showcase-your-app.firebaseio.com"
+
 class DataService {
+    
     
     static let ds = DataService()
     
     //Getting a reference to our firebase account
-    private var _REF_BASE = Firebase(url: "https://showcase-your-app.firebaseio.com")
+    private var _REF_BASE = Firebase(url: "\(URL_BASE)")
+    
+    private var _REF_POSTS = Firebase(url:"\(URL_BASE)/posts")
+    
+    private var _REF_USERS = Firebase(url: "\(URL_BASE)/users")
     
     var REF_BASE: Firebase {
         return _REF_BASE
+    }
+    
+    var REF_POSTS: Firebase {
+        return _REF_POSTS
+    }
+    
+    var REF_USERS: Firebase {
+        return _REF_USERS
     }
 }
