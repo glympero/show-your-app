@@ -9,18 +9,27 @@
 import UIKit
 import Firebase
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     //Storing all posts
     var posts = [Post]()
     //Storing downloaded images
     static var imageCache = NSCache()
+    //For image picker usage
+    var imagePicker: UIImagePickerController!
+    
+    @IBOutlet weak var postField: MaterialTextfield!
+    @IBOutlet weak var imageSelector: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.estimatedRowHeight = 340
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        //navigationController.delegate = self
         
         //Listen for whenever anything changes in firebase - which informs appication instantly
         //.Value is called whenever data is changed - cmd-click to see different options
@@ -82,4 +91,29 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        //if there is no image, reduce the cell height.
+        let post = posts[indexPath.row]
+        if post.imgUrl == nil {
+            return 170
+        }else{
+            return tableView.estimatedRowHeight
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        //Assign the image selected to the image
+        imageSelector.image = image
+    }
+    
+    @IBAction func selectImage(sender: AnyObject) {
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func makePost(sender: AnyObject) {
+    }
+    
 }
