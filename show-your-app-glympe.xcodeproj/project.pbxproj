@@ -10,6 +10,7 @@
 		F6D7BFC353F95171BA6BA0CD /* Pods_show_your_app_glympe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1D314CC3E16D2760514D7F /* Pods_show_your_app_glympe.framework */; };
 		F94E76821C53D44500E0EB27 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E76811C53D44500E0EB27 /* FeedVC.swift */; };
 		F94E76841C53D55300E0EB27 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94E76831C53D55300E0EB27 /* FeedCell.swift */; };
+		F9528B4E1C54A6A00046F3A2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9528B4D1C54A6A00046F3A2 /* Post.swift */; };
 		F98FB3771C4FCFBF004653F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98FB3761C4FCFBF004653F8 /* AppDelegate.swift */; };
 		F98FB3791C4FCFBF004653F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98FB3781C4FCFBF004653F8 /* ViewController.swift */; };
 		F98FB37C1C4FCFBF004653F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F98FB37A1C4FCFBF004653F8 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		D18793D9A856692EBAEBBA54 /* Pods-show-your-app-glympe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-show-your-app-glympe.release.xcconfig"; path = "Pods/Target Support Files/Pods-show-your-app-glympe/Pods-show-your-app-glympe.release.xcconfig"; sourceTree = "<group>"; };
 		F94E76811C53D44500E0EB27 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		F94E76831C53D55300E0EB27 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		F9528B4D1C54A6A00046F3A2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F98FB3731C4FCFBF004653F8 /* show-your-app-glympe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "show-your-app-glympe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98FB3761C4FCFBF004653F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98FB3781C4FCFBF004653F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		F98FB38A1C4FD2AC004653F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F9528B4D1C54A6A00046F3A2 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F94E76821C53D44500E0EB27 /* FeedVC.swift in Sources */,
+				F9528B4E1C54A6A00046F3A2 /* Post.swift in Sources */,
 				F94E76841C53D55300E0EB27 /* FeedCell.swift in Sources */,
 				F98FB39C1C4FDE01004653F8 /* MaterialImage.swift in Sources */,
 				F98FB3951C4FD7FB004653F8 /* MaterialView.swift in Sources */,

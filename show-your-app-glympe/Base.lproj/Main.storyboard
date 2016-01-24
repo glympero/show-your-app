@@ -63,9 +63,9 @@
                                                 <rect key="frame" x="0.0" y="22" width="65" height="65"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rA4-Ht-v7V" customClass="MaterialButton" customModule="show_your_app_glympe" customModuleProvider="target">
-                                                <rect key="frame" x="115" y="38" width="405" height="33"/>
+                                                <rect key="frame" x="115" y="38" width="405" height="32"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                                 <state key="normal" title="FACEBOOK LOGIN">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -283,6 +283,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="appImg" destination="m0M-LP-7kn" id="R8b-qp-edQ"/>
+                                            <outlet property="descriptionText" destination="YTh-YR-wLT" id="gGo-Hr-Vpt"/>
+                                            <outlet property="likes" destination="TeD-F4-q46" id="wrJ-fT-GLu"/>
                                             <outlet property="profileImg" destination="HRt-wd-JDw" id="YRF-7y-guV"/>
                                         </connections>
                                     </tableViewCell>
@@ -304,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIS-ry-dAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="621"/>
+            <point key="canvasLocation" x="1935" y="604"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RPT-cm-n3D">

@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-show-your-app-glympe/Alamofire.framework"
   install_framework "Pods-show-your-app-glympe/Firebase.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-show-your-app-glympe/Alamofire.framework"
   install_framework "Pods-show-your-app-glympe/Firebase.framework"
 fi

@@ -52,7 +52,16 @@ class ViewController: UIViewController {
                     }else{
                         print("Loggged in \(authData)")
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
-                        self.userLogin()
+                        if let provider = authData.provider, uid = authData.uid {
+                            let user = ["provider" : provider]
+                            let userUid = uid
+                            self.userSignUpAndLogin(userUid, user: user)
+//                            DataService.ds.createFirebaseUser(userUid, user: user)
+//                            self.performSegueWithIdentifier(SEGUE_LOG_IN, sender: nil)
+                        }
+                        else{
+                            self.showAlert("Cannot create user", msg: "Please try again. Account not created")
+                        }
                     }
                 })
             }
@@ -75,8 +84,22 @@ class ViewController: UIViewController {
                                 //If all ok - save user id and login (result[KEY_UID] instead of result.uid because it is a dictionary
                                 NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
                                 //We dont check for errors as we just created a new user account (could add check if needed though
-                                DataService.ds.REF_BASE.authUser(email, password: password, withCompletionBlock: nil)
-                                self.userLogin()
+                                //DataService.ds.REF_BASE.authUser(email, password: password, withCompletionBlock: nil)
+                                DataService.ds.REF_BASE.authUser(email, password: password, withCompletionBlock: { err, authData in
+                                    if let provider = authData.provider, uid = authData.uid {
+                                        let user = ["provider" : provider]
+                                        let userUid = uid
+                                        self.userSignUpAndLogin(userUid, user: user)
+//                                        DataService.ds.createFirebaseUser(userUid, user: user)
+                                        
+                                    }
+                                    else{
+                                        self.showAlert("Cannot create user", msg: "Please try again. Account not created")
+                                    }
+
+                                })
+                                //self.performSegueWithIdentifier(SEGUE_LOG_IN, sender: nil)
+                                //self.userLogin()
                             }
                         })
                     } else {
@@ -101,6 +124,12 @@ class ViewController: UIViewController {
     }
     
     func userLogin(){
+        
+        performSegueWithIdentifier(SEGUE_LOG_IN, sender: nil)
+    }
+    
+    func userSignUpAndLogin(uid: String, user: Dictionary<String, String>){
+        DataService.ds.createFirebaseUser(uid, user: user)
         performSegueWithIdentifier(SEGUE_LOG_IN, sender: nil)
     }
 

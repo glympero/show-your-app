@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C47A9EEF19369317015DF00E'
+               BlueprintIdentifier = 'A8E45A17DC70C41F89F1DBD4'
                BlueprintName = 'Pods-show-your-app-glympe'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_show_your_app_glympe.framework'>

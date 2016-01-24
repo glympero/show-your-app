@@ -34,4 +34,10 @@ class DataService {
     var REF_USERS: Firebase {
         return _REF_USERS
     }
+    
+    func createFirebaseUser(uid: String, user: Dictionary<String, String>) {
+        //Create a new firebase user in location firebase/users/(new user unique id - uid)
+        REF_USERS.childByAppendingPath(uid).setValue(user)
+        
+    }
 }

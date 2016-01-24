@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'show-your-app-glympe' do
 	pod 'Firebase', '>= 2.5.0'
+    pod 'Alamofire', '~> 3.0'
 end
 
