@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class Post {
     private var _postId: String!
@@ -14,6 +15,7 @@ class Post {
     private var _imgUrl: String?
     private var _likes: Int
     private var _username: String!
+    private var _postRef: Firebase!
     
     var username: String {
         return _username
@@ -33,6 +35,10 @@ class Post {
     
     var likes: Int {
         return _likes
+    }
+    
+    var postRef: Firebase {
+        return _postRef
     }
     
     //This initializer is used when user creates post in the app
@@ -58,7 +64,17 @@ class Post {
         }else {
             self._likes = 0
         }
-        
+        self._postRef = DataService.ds.REF_POSTS.childByAppendingPath(self._postId)
     }
     
+    func adjustLikes(addLike: Bool) {
+        if addLike {
+            _likes = _likes + 1
+                
+        }else {
+                _likes = _likes - 1
+        }
+        
+        _postRef.childByAppendingPath("likes").setValue(_likes)
+    }
 }

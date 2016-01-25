@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Alamofire
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -63,6 +64,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let post = posts[indexPath.row]
         if let cell = tableView.dequeueReusableCellWithIdentifier("FeedCell") as? FeedCell{
             //If there is an request for an old item, cancel it because user is asking for a new cell
@@ -83,10 +85,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//
-//    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -109,11 +107,90 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imageSelector.image = image
     }
     
+    func postToFirebase(imgUrl: String?) {
+        var post: Dictionary<String, AnyObject> = [
+            "description": postField.text!,
+            "likes": 0
+        ]
+        if imgUrl != nil {
+            post["imageUrl"] = imgUrl!
+        }
+        //Create a new ID in the posts in firebase
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        //Set the value to the new id
+        firebasePost.setValue(post)
+        
+        //Reset fields and reload data
+        postField.text = ""
+        imageSelector.image = UIImage(named: "camera")
+        tableView.reloadData()
+    }
+
+    
     @IBAction func selectImage(sender: AnyObject) {
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func makePost(sender: AnyObject) {
-    }
+        
+        if let txt = postField.text where txt != "" {
+            
+            if let img = imageSelector.image where img != UIImage(named: "camera"){
+                let urlStr = "https://post.imageshack.us/upload_api.php"
+                let url = NSURL(string: urlStr)!
+                
+                //Convert image to jpeg - 0=fully compressed - 1=not compressed
+                let imgData = UIImageJPEGRepresentation(img, 0.2)!
+                //.dataUsingStringEncoding - All info which is going to be sent to imageshack has to be encoded to data in order to be included in the http request. This is the standard for encoding string to data
+                let keyData = "MFRW3ZP4192d87f0fbb783411494988b4c057df8".dataUsingEncoding(NSUTF8StringEncoding)!
+                //This key is needed by the imageshack API.
+                let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
+                
+                
+                //urlstring - multipartformdata
+                Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
+                    //Add the parameters needed for the request and results will go to encodingResult
+                    multipartFormData.appendBodyPart(data: imgData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
+                    multipartFormData.appendBodyPart(data: keyData, name: "key")
+                    multipartFormData.appendBodyPart(data: keyJSON, name: "format")
+                    }) { encodingResult in
+                        //When uploading is done...alamofire returns either success or failure
+                        switch(encodingResult) {
+                        case .Success(let upload, _,_):
+                            upload.responseJSON(completionHandler: { response in
+                                //Get the value of the result from the Imageshack API (JSON DICTIONARY)
+                                if let info = response.result.value as? Dictionary<String, AnyObject> {
+                                    if let links = info["links"] as? Dictionary<String, AnyObject> {
+                                        if let imgLink = links["image_link"] as? String {
+                                            print("Link: \(imgLink)")
+                                            self.postToFirebase(imgLink)
+                                        }
+                                    }
+                                }
+                            })
+                        case .Failure(let error):
+                            print(error)
+                        }
+                }
+             //Post Without Image
+            }else{
+                self.postToFirebase(nil)
+            }
+        }
+        
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

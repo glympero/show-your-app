@@ -175,6 +175,24 @@
             </objects>
             <point key="canvasLocation" x="239" y="621"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="3ol-ig-8hk">
+            <objects>
+                <viewController id="313-0p-7J0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6pc-tR-4pC"/>
+                        <viewControllerLayoutGuide type="bottom" id="KSA-eL-B6S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gga-Ij-1Pt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6n-WJ-uhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="42"/>
+        </scene>
         <!--FeedVC-->
         <scene sceneID="eDu-Cx-rNw">
             <objects>
@@ -335,6 +353,7 @@
                                         <connections>
                                             <outlet property="appImg" destination="m0M-LP-7kn" id="R8b-qp-edQ"/>
                                             <outlet property="descriptionText" destination="YTh-YR-wLT" id="gGo-Hr-Vpt"/>
+                                            <outlet property="likeImg" destination="5Nb-id-K6u" id="Nmd-TQ-k5D"/>
                                             <outlet property="likes" destination="TeD-F4-q46" id="wrJ-fT-GLu"/>
                                             <outlet property="profileImg" destination="HRt-wd-JDw" id="YRF-7y-guV"/>
                                         </connections>
@@ -373,7 +392,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1998" y="540"/>
+            <point key="canvasLocation" x="2175" y="526"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RPT-cm-n3D">
@@ -392,7 +411,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lr-tp-Shj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976" y="621"/>
+            <point key="canvasLocation" x="1230" y="689"/>
         </scene>
     </scenes>
     <resources>
